@@ -1,0 +1,125 @@
+/* SECTION WITH EXTERNAL BACKGROUND IMAGE */
+.projects-section {
+    padding: 80px 20px;
+    color: white;
+    text-align: center;
+
+    background-image: url("https://tse2.mm.bing.net/th/id/OIP.5txkvrYjT7QHBJN6ruu7WwHaEK?rs=1&pid=ImgDetMain&o=7&rm=3");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    position: relative;
+    overflow: hidden;
+}
+
+/* Dark overlay for readability */
+.projects-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(4px);
+}
+
+/* Title */
+.projects-title {
+    position: relative;
+    font-size: 44px;
+    margin-bottom: 40px;
+    font-weight: bold;
+    color: #00eaff;
+    text-shadow: 0 0 18px #00eaff;
+    z-index: 2;
+}
+
+/* Grid Layout */
+.projects-grid {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 35px;
+    z-index: 2;
+}
+
+/* Project Card */
+.project-card {
+    background: rgba(255, 255, 255, 0.07);
+    padding: 20px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+
+    box-shadow: 0 0 25px rgba(0, 238, 255, 0.15);
+    transition: 0.35s ease;
+    position: relative;
+    z-index: 2;
+}
+
+.project-card:hover {
+    box-shadow: 0 0 35px rgba(0, 238, 255, 0.45);
+    transform: translateY(-3px) scale(1.05);
+}
+
+/* Image Wrapper */
+.image-wrapper {
+    overflow: hidden;
+    border-radius: 14px;
+    position: relative;
+}
+
+.project-img {
+    width: 100%;
+    border-radius: 14px;
+    transition: 0.4s ease;
+}
+
+.project-card:hover .project-img {
+    transform: scale(1.12);
+    filter: brightness(1.08);
+}
+
+/* Texts */
+.project-name {
+    font-size: 22px;
+    font-weight: 700;
+    margin-top: 15px;
+    color: #00eaff;
+    text-shadow: 0 0 10px #00eaff88;
+}
+
+.project-desc {
+    color: #ddd;
+    margin-top: 8px;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+/* Floating Glow Blob */
+.projects-section::after {
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(0, 255, 255, 0.35), transparent);
+    top: 20%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    filter: blur(90px);
+    animation: floatBlob 10s infinite ease-in-out;
+    z-index: 1;
+}
+
+@keyframes floatBlob {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    50% {
+        transform: translate(-50%, -45%) scale(1.2);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+}

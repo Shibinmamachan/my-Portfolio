@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: radial-gradient(circle, #0b0f1a, #000);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Title */
+.title {
+    margin-top: 30px;
+    font-size: 3rem;
+    font-weight: 800;
+    background: linear-gradient(90deg, #00f6ff, #ff00ea);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Container */
+.container {
+    position: relative;
+    width: 520px;
+    height: 520px;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Glow ring */
+.glow-ring {
+    position: absolute;
+    width: 440px;
+    height: 440px;
+    border-radius: 50%;
+    background: conic-gradient(#00f6ff, #ff00ea, #00f6ff);
+    filter: blur(45px);
+    animation: glow 8s linear infinite;
+}
+
+@keyframes glow {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Rotating box */
+.box {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    transform-style: preserve-3d;
+    animation: spin 20s linear infinite;
+}
+
+.box:hover {
+    animation-play-state: paused;
+}
+
+@keyframes spin {
+    from {
+        transform: perspective(1000px) rotateY(0deg);
+    }
+
+    to {
+        transform: perspective(1000px) rotateY(360deg);
+    }
+}
+
+/* Card positions */
+.box span {
+    position: absolute;
+    inset: 0;
+    transform: rotateY(calc(var(--i) * 45deg)) translateZ(380px);
+}
+
+/* Hide checkbox */
+.box input {
+    display: none;
+}
+
+/* Card (IMPORTANT FIX) */
+.card {
+    width: 100%;
+    height: 100%;
+    display: block;
+    /* 🔥 FIX */
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.8s;
+    cursor: pointer;
+}
+
+/* Flip */
+.box input:checked+.card {
+    transform: rotateY(180deg);
+}
+
+/* Front & Back (IMPORTANT FIX) */
+.front,
+.back {
+    position: absolute;
+    top: 0;
+    /* 🔥 FIX */
+    left: 0;
+    /* 🔥 FIX */
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 18px;
+}
+
+/* Front image */
+.front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 18px;
+    border: 2px solid #fff;
+}
+
+/* Back */
+.back {
+    transform: rotateY(180deg);
+    background: linear-gradient(135deg, #1c1c3c, #0f2027);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    color: #fff;
+    text-align: center;
+    font-weight: 600;
+    box-shadow: 0 0 25px #00f6ff;
+}
+
+/* Hover glow */
+.card:hover .front img {
+    box-shadow: 0 0 30px #00f6ff;
+}
