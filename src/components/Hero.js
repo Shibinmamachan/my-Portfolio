@@ -330,6 +330,7 @@ function dotStyle(color) {
     flexShrink: 0,
   };
 }
+style={dotStyle}
 
 const primaryButtonStyle = {
   padding: "12px 20px",
