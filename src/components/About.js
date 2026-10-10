@@ -84,20 +84,43 @@ export default function About() {
             flexWrap: "wrap",
           }}
         >
+          
           {/* Profile Image */}
-          <motion.img
-            src="https://cdn-icons-png.flaticon.com/512/4712/4712100.png"
-            alt="Developer"
+          <motion.div
+            initial={{ scale: 0.8, opacity: 0 }}
+            whileInView={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
             style={{
               width: "180px",
+              height: "180px",
+              minWidth: "180px",
               borderRadius: "50%",
-              border: "3px solid #00d8ff",
-              boxShadow: "0 0 20px #00d8ff99",
+              padding: "4px",
+              boxSizing: "border-box",
+              background:
+                "linear-gradient(135deg, #00d8ff, #6c63ff, #00d8ff)",
+              boxShadow: "0 0 25px rgba(0,216,255,0.5)",
+              overflow: "hidden",
+              margin: "0 auto",
             }}
-            initial={{ scale: 0 }}
-            whileInView={{ scale: 1 }}
-            transition={{ duration: 0.8 }}
-          />
+          >
+            <img
+              src="/shibin.png"
+              alt="Shibin Mamachan"
+              style={{
+                width: "100%",
+                height: "100%",
+                display: "block",
+                objectFit: "cover",
+                objectPosition: "center 30%",
+                borderRadius: "50%",
+                boxSizing: "border-box",
+                border: "3px solid #080c14",
+              }}
+            />
+          </motion.div>
+
 
           <motion.p
             style={{

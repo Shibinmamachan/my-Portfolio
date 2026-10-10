@@ -1,0 +1,163 @@
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 8%;
+    background: rgba(8, 12, 20, 0.96);
+    border-bottom: 1px solid #263343;
+}
+
+.nav-logo,
+.footer-logo {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.nav-logo span,
+.footer-logo span,
+.hero h1 span {
+    color: #00d8ff;
+}
+
+.nav-links {
+    display: flex;
+    gap: 26px;
+}
+
+.nav-links a,
+.footer-links a {
+    color: #ddd;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.nav-links a:hover,
+.footer-links a:hover {
+    color: #00d8ff;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    color: #00d8ff;
+    border: 0;
+    font-size: 1.7rem;
+    cursor: pointer;
+}
+
+.hero {
+    min-height: 75vh;
+    padding: 100px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background:
+        radial-gradient(circle at top, #123044, #080c14 65%);
+    color: white;
+}
+
+.hero-greeting {
+    color: #00d8ff;
+    letter-spacing: 4px;
+}
+
+.hero h1 {
+    font-size: clamp(2.3rem, 6vw, 4.5rem);
+    margin: 15px 0;
+}
+
+.hero h2 {
+    color: #00d8ff;
+    font-size: clamp(1.3rem, 3vw, 2rem);
+}
+
+.hero-description {
+    max-width: 620px;
+    line-height: 1.8;
+    color: #cbd5e1;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+.btn-primary,
+.btn-outline {
+    padding: 13px 22px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.btn-primary {
+    background: #00d8ff;
+    color: #07111c;
+}
+
+.btn-outline {
+    border: 1px solid #00d8ff;
+    color: #00d8ff;
+}
+
+.footer {
+    padding: 40px 20px;
+    background: #080c14;
+    color: #cbd5e1;
+    text-align: center;
+    border-top: 1px solid #263343;
+}
+
+.footer-links {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+
+.copyright {
+    color: #8491a3;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 700px) {
+    .navbar {
+        padding: 16px 5%;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        padding: 20px;
+        background: #080c14;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .hero {
+        padding: 75px 20px;
+        min-height: 65vh;
+    }
+}
