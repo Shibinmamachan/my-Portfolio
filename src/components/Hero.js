@@ -320,17 +320,7 @@ export default function Hero() {
   );
 }
 
-function dotStyle(color) {
-  return {
-    display: "inline-block",
-    width: "10px",
-    height: "10px",
-    borderRadius: "50%",
-    background: color,
-    flexShrink: 0,
-  };
-}
-style={dotStyle}
+
 
 const primaryButtonStyle = {
   padding: "12px 20px",
